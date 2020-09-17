@@ -5,14 +5,3 @@ header{
 h1{
     text-align: center;
 }
-.container {
-    padding-top: 25px;
-    border: solid 5 px red;
-    background: red;
-}
-.latinVerbiage {
-    padding: 20px;
-}
-.industryFilterButtons {
-    border: black solid 10 px;
-}
