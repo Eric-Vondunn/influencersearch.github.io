@@ -5,10 +5,11 @@ header{
 h1{
     text-align: center;
 }
-.container {
+.container-fluid {
     padding-top: 25px;
-    border: solid 5 px red;
-    background: red;
+    /* border: solid 5 px red;
+    background: red; */
+    width: 90vw;
 }
 .latinVerbiage {
     padding: 20px;
@@ -22,10 +23,65 @@ h1{
 }
 
 .top-three-img{
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     display: block;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid #dfdfdf
+}
+
+.top-three-body{
+    text-align: center;
+    width: 200px;
+    margin: auto;
+}
+
+.button{
+    border: 1px solid #000000;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+.button.active{
+    border: 1px solid #000000;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+}
+.top-three-button{
+    margin: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.top-three-card{
+    border-radius: 30px;
+    padding: 60px;
+    background-color: #ffffff;
+    margin-left: 6.25vw;
+    box-shadow: 0 4px 8px 0 rgba(209, 209, 209, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+
+}
+
+.rest-result-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+   
+}
+
+.section-divider{
+text-align: center;
+margin-top: 95px;
+margin-bottom: 80px;
+
 }
