@@ -1,97 +1,4 @@
-
-
-// get image 
-console.log(beauty.data[1].result.profile_image_url)
-// get follower count
-console.log(beauty.data[1].result.followers_count)
-// get influencer name
-console.log(beauty.data[2].result.name)
-// get twitter id
-console.log(beauty.data[3].result.id)
-// get twitter account description
-console.log(beauty.data[4].result.description)
-console.log(beauty.data[5].result.name)
-console.log(beauty.data[6].result.name)
-console.log(beauty.data[7].result.name)
-console.log(beauty.data[8].result.name)
-console.log(beauty.data[9].result.name)
-
-// get industy data when click
-$(".ui").on("click", function(event) {
-
-    event.preventDefault();
-    $("#topThree").text("")
-    
-    // get result data
-    // loop over top three and assign css style
-    for (var i = 0; i < 3; i++){
-    //  append profile info
-    var img = beauty.data[i].result.profile_image_url
-    var normalImg = img.replace("normal", "400x400")
-      var profileImage=$("<img>").attr("src", normalImg )
-       var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
-       var profileName =$("<div>").text(beauty.data[i].result.name)
-       var profileDescription =$("<div>").text(beauty.data[i].result.description)
-       var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
-       var profileLink = $("<button>").append(link)
-       profileLink.addClass("button top-three-button")
-       profileLink.text("View Profile")
-       
-       profileImage.addClass("top-three-img")
-       followerNum.attr("id", "top-num")
-       followerNum.addClass("top-three-num")
-       profileName.css("text-align", "center")
-       profileDescription.addClass("top-three-body")
-       var topThreeEl = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
-       topThreeEl.addClass("col-3 top-three-card")
-       $("#topThree").append(topThreeEl)
-       
-       
-    }
-    // Add text also popular
-    var sectionDivider = $("<div>").text("Also Popular")
- $("#divider").append(sectionDivider)
- $("#divider").addClass("section-divider")
-    // loop over rest of results
-    for (var i=4; i<10; i++){
-        var img = beauty.data[i].result.profile_image_url
-    var normalImg = img.replace("normal", "400x400")
-        var profileImage=$("<img>").attr("src", normalImg )
-        var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
-        var profileName =$("<div>").text(beauty.data[i].result.name)
-        var profileDescription =$("<div>").text(beauty.data[i].result.description)
-        var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
-        var profileLink = $("<button>").append(link)
-        profileLink.addClass("button top-three-button")
-        profileLink.text("View Profile")
-        
-        profileImage.addClass("rest-result-img")
-        followerNum.attr("id", "top-num")
-        followerNum.addClass("top-three-num")
-        profileName.css("text-align", "center")
-        profileDescription.addClass("top-three-body")
-           
-       
-           var restSearch = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
-           restSearch.addClass("col-12 ")
-           $("#additionalOptions").append(restSearch)
-           
-           
-           
-
-    }
-    $("#topThree").hide().fadeIn(200);
-    $("additionalOptions").fadeIn(10000);
-   
-
-  })
-
-
-
-
-
-
-  var beauty = {
+var beauty = {
     
     data: [{
   
@@ -416,6 +323,99 @@ $(".ui").on("click", function(event) {
   
   
   }
+
+// get image 
+console.log(beauty.data[1].result.profile_image_url)
+// get follower count
+console.log(beauty.data[1].result.followers_count)
+// get influencer name
+console.log(beauty.data[2].result.name)
+// get twitter id
+console.log(beauty.data[3].result.id)
+// get twitter account description
+console.log(beauty.data[4].result.description)
+console.log(beauty.data[5].result.name)
+console.log(beauty.data[6].result.name)
+console.log(beauty.data[7].result.name)
+console.log(beauty.data[8].result.name)
+console.log(beauty.data[9].result.name)
+
+// get industy data when click
+$(".ui").on("click", function(event) {
+
+    event.preventDefault();
+    $("#topThree").text("")
+    
+    // get result data
+    // loop over top three and assign css style
+    for (var i = 0; i < 3; i++){
+    //  append profile info
+    var img = beauty.data[i].result.profile_image_url
+    var normalImg = img.replace("normal", "400x400")
+      var profileImage=$("<img>").attr("src", normalImg )
+       var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
+       var profileName =$("<div>").text(beauty.data[i].result.name)
+       var profileDescription =$("<div>").text(beauty.data[i].result.description)
+       var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
+       var profileLink = $("<button>").append(link)
+       profileLink.addClass("button top-three-button")
+       profileLink.text("View Profile")
+       
+       profileImage.addClass("top-three-img")
+       followerNum.attr("id", "top-num")
+       followerNum.addClass("top-three-num")
+       profileName.css("text-align", "center")
+       profileDescription.addClass("top-three-body")
+       var topThreeEl = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
+       topThreeEl.addClass("col-3 top-three-card")
+       $("#topThree").append(topThreeEl)
+       
+       
+    }
+    // Add text also popular
+    var sectionDivider = $("<div>").text("Also Popular")
+ $("#divider").append(sectionDivider)
+ $("#divider").addClass("section-divider")
+    // loop over rest of results
+    for (var i=4; i<10; i++){
+        var img = beauty.data[i].result.profile_image_url
+    var normalImg = img.replace("normal", "400x400")
+        var profileImage=$("<img>").attr("src", normalImg )
+        var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
+        var profileName =$("<div>").text(beauty.data[i].result.name)
+        var profileDescription =$("<div>").text(beauty.data[i].result.description)
+        var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
+        var profileLink = $("<button>").append(link)
+        profileLink.addClass("button top-three-button")
+        profileLink.text("View Profile")
+        
+        profileImage.addClass("rest-result-img")
+        followerNum.attr("id", "top-num")
+        followerNum.addClass("top-three-num")
+        profileName.css("text-align", "center")
+        profileDescription.addClass("top-three-body")
+           
+       
+           var restSearch = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
+           restSearch.addClass("col-12 ")
+           $("#additionalOptions").append(restSearch)
+           
+           
+           
+
+    }
+    $("#topThree").hide().fadeIn(200);
+    $("additionalOptions").fadeIn(10000);
+   
+
+  })
+
+
+
+
+
+
+
 
 
 
