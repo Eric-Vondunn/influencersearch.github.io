@@ -1,10 +1,11 @@
 header{
-    background-color:#999999;
+    background-color:#f5ded3;
     height: 70px;
 }
 h1{
     text-align: center;
 }
+
 .container-fluid {
     padding-top: 25px;
     /* border: solid 5 px red;
@@ -38,15 +39,42 @@ h1{
     margin: auto;
 }
 
+.button:hover{
+    color: #eec77f !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
+  
+}
+    /*background-color: #999999;
+    color:#ffffff ;*/
+/*color: #494949 !important;
+border-radius: 50px;
+border-color: #494949 !important;
+transition: all 0.3s ease 0s;*/
 .button{
-    border: 1px solid #000000;
+    color: #000000 !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    margin: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*padding: 20px;*/
+    border: 2px solid #f5ded3!important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    /*border: 1px solid #000000;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 30px;
-    background-color: #ffffff;
+    background-color: #ffffff;*/
 }
+
 .button.active{
     border: 1px solid #000000;
     padding-top: 15px;
@@ -85,3 +113,9 @@ margin-top: 95px;
 margin-bottom: 80px;
 
 }
+.footer{
+    background-color: #f5ded3;
+    padding-top:200px;
+}
+
+
