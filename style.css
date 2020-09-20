@@ -1,9 +1,16 @@
+nav{
+    text-align: center;
+    padding: 30px;
+}
+
+
 header{
     background-color:#f5ded3;
     height: 70px;
 }
 h1{
     text-align: center;
+    font-family: 'Mada', sans-serif;
 }
 
 .container-fluid {
@@ -13,24 +20,33 @@ h1{
     width: 90vw;
 }
 .latinVerbiage {
-    padding: 20px;
+    
+    font-family: 'Mada', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    
 }
 .industryFilterButtons {
     border: black solid 10 px;
 }
 .top-three-num{
     text-align: center;
-    font-size: 75px;
+    font-size: 60px;
+    font-family: 'Mada', sans-serif;
+    font-weight: 300;
+
 }
 
 .top-three-img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #dfdfdf
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #dfdfdf
 }
 
 .top-three-body{
@@ -53,6 +69,7 @@ border-radius: 50px;
 border-color: #494949 !important;
 transition: all 0.3s ease 0s;*/
 .button{
+
     color: #000000 !important;
     text-transform: uppercase;
     background: #ffffff;
@@ -67,23 +84,24 @@ transition: all 0.3s ease 0s;*/
     display: inline-block;
     transition: all 0.3s ease 0s;
     /*border: 1px solid #000000;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 30px;
-    background-color: #ffffff;*/
+
 }
 
 .button.active{
     border: 1px solid #000000;
+
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 30px;
-    background-color: #ffffff;
+    background-color: #F4F4F4;
+    outline: 0;
+    box-shadow: none;
 }
+
+select:focus{outline:0!important; box-shadow: none;}
+select:active{outline:0!important; box-shadow: none;}
 .top-three-button{
     margin: auto;
     display: block;
@@ -95,22 +113,112 @@ transition: all 0.3s ease 0s;*/
     padding: 60px;
     background-color: #ffffff;
     margin-left: 6.25vw;
-    box-shadow: 0 4px 8px 0 rgba(209, 209, 209, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 80px;
     position: relative;
+    box-shadow: 0 4px 8px 0 rgba(228, 228, 228, 0.1), 0 6px 20px 0 rgba(146, 146, 146, 0.19);
+}
+.top-three-card:hover{
 
+    box-shadow: 0 4px 8px 0 rgba(146, 146, 146, 0.1), 0 6px 20px 0 rgba(34, 34, 34, 0.19);
 }
 
 .rest-result-img{
     width: 100px;
-    height: 100px;
+    height: auto;
     border-radius: 50%;
-   
+    
 }
 
 .section-divider{
 text-align: center;
 margin-top: 95px;
 margin-bottom: 80px;
+font-family: 'Mada', sans-serif;
+
+}
+.followerNumb {
+    font-size: 40px; 
+    text-align: left;
+    font-family: 'Mada', sans-serif;
+    font-weight: 400;
+}
+
+
+.resultRow {
+ padding: 15px;
+}
+
+.profileName {
+    font-family: 'Mada', sans-serif;
+    margin: 0px;
+    text-align: left;
+} 
+.title {
+    font-family: 'Mada', sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+
+}
+hr {
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #dfdfdf !important;
+    padding: 0;
+}
+
+a{
+    font-family: 'Mada', sans-serif;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    display: inline !important;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+/* a:after {
+    content: ' \2192';
+  } */
+
+button:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
+  .footer {
+    font-family: 'Mada', sans-serif;
+      text-align: center;
+      padding:20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-top: #dfdfdfdf 1px solid;
+      backdrop-filter: blur(4px);
+  }
+
+
+  .twitter-icon{
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin-top:10px ;
+  }
+  
+  .classFour{
+      margin: auto;
+      width: 90vw;
+      margin-bottom: 200px;
+  }
+  
+  .arrow{
+      height: auto;
+      width: 15px;
+      margin-left: 8px;
+     
+  }
+
+
+  /* Tablet Breakpoint */
+
 
 }
 .footer{
@@ -118,4 +226,15 @@ margin-bottom: 80px;
     padding-top:200px;
 }
 
+
+
+  @media only screen and (max-width: 475px) {
+    .rest-result-img{
+        width: 140px;
+        height: auto;
+        border-radius: 50%;
+        
+    }
+  
+  }
 

@@ -339,7 +339,7 @@ console.log(beauty.data[6].result.name)
 console.log(beauty.data[7].result.name)
 console.log(beauty.data[8].result.name)
 console.log(beauty.data[9].result.name)
-
+$(".latinVerbiage").hide().fadeIn(1000)
 // get industy data when click
 $(".ui").on("click", function(event) {
 
@@ -352,63 +352,91 @@ $(".ui").on("click", function(event) {
     //  append profile info
     var img = beauty.data[i].result.profile_image_url
     var normalImg = img.replace("normal", "400x400")
-      var profileImage=$("<img>").attr("src", normalImg )
-       var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
-       var profileName =$("<div>").text(beauty.data[i].result.name)
-       var profileDescription =$("<div>").text(beauty.data[i].result.description)
-       var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
-       var profileLink = $("<button>").append(link)
-       profileLink.addClass("button top-three-button")
-       profileLink.text("View Profile")
-       
-       profileImage.addClass("top-three-img")
-       followerNum.attr("id", "top-num")
-       followerNum.addClass("top-three-num")
-       profileName.css("text-align", "center")
-       profileDescription.addClass("top-three-body")
-       var topThreeEl = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
-       topThreeEl.addClass("col-3 top-three-card")
-       $("#topThree").append(topThreeEl)
-       
-       
+    var profileImage=$("<img>").attr("src", normalImg )
+    var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
+    var profileName =$("<div>").text(beauty.data[i].result.name)
+    var profileDescription =$("<div>").text(beauty.data[i].result.description)
+    var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
+    var profileLink = $("<button>").append(link)
+    profileLink.addClass("button top-three-button")
+    profileLink.text("View Profile")
+    
+    profileImage.addClass("top-three-img")
+    followerNum.attr("id", "top-num")
+    followerNum.addClass("top-three-num")
+    profileName.css("text-align", "center")
+    profileDescription.addClass("top-three-body")
+    var topThreeEl = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
+    topThreeEl.attr("id", i)
+    topThreeEl.addClass("col-12 col-md-3 col-lg-3 top-three-card")
+    $("#topThree").append(topThreeEl)
+
     }
     // Add text also popular
+    $("#divider").text("")
     var sectionDivider = $("<div>").text("Also Popular")
- $("#divider").append(sectionDivider)
- $("#divider").addClass("section-divider")
+    $("#divider").append(sectionDivider)
+    $("#divider").addClass("section-divider latinVerbiage")
+
+    
     // loop over rest of results
-    for (var i=4; i<10; i++){
+    $("#additionalOptions").text("")
+    for (var i=3; i<10; i++){
+        // Creating image elements  
         var img = beauty.data[i].result.profile_image_url
-    var normalImg = img.replace("normal", "400x400")
+        var normalImg = img.replace("normal", "400x400")
         var profileImage=$("<img>").attr("src", normalImg )
+        var profileImgWrap=$("<div>").append(profileImage)
+        profileImage.addClass("rest-result-img")
+        profileImgWrap.addClass("col-6 col-xs-6 col-sm-2" )
+
+        // Creating column with followers count
         var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
-        var profileName =$("<div>").text(beauty.data[i].result.name)
-        var profileDescription =$("<div>").text(beauty.data[i].result.description)
-        var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
-        var profileLink = $("<button>").append(link)
-        profileLink.addClass("button top-three-button")
-        profileLink.text("View Profile")
+        var followersWord =$("<p>").text("Followers")
+        var followerWrap = $("<div>").append(followerNum, followersWord)
+        followerWrap.addClass("col-6 col-xs-6 col-sm-2")
         
+        // Creating title and description
+        var profileName =$("<p>").text(beauty.data[i].result.name)
+        profileName.addClass("title")
+        var profileDescription =$("<p>").text(beauty.data[i].result.description)
+        var profileGroup = $("<div>").append(profileName,profileDescription)
+        profileGroup.addClass("col-12 col-sm-6 profileName")
+
+        // Creating link to Twitter 
+        var viewProfile = $("<div>").addClass("col-12 col-sm-auto")
+        var link = $("<a>").attr("href","https://twitter.com/" + beauty.data[i].result.screen_name);
+        var arrow = $("<img>").attr("src", "https://github.com/pankuanting102/week-2-homework-responsive-portfolio/blob/master/Assets/arrow@2x.png?raw=true")
+        arrow.addClass("arrow")
+        link.attr("target","_blank")
+        link.text("View Profile")
+        viewProfile.append(link, arrow); 
+       
+
+        // Adding hr element 
+        var hrEl = $("<hr>");
+
+        // Assign classes 
         profileImage.addClass("rest-result-img")
         followerNum.attr("id", "top-num")
-        followerNum.addClass("top-three-num")
-        profileName.css("text-align", "center")
-        profileDescription.addClass("top-three-body")
-           
-       
-           var restSearch = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
-           restSearch.addClass("col-12 ")
-           $("#additionalOptions").append(restSearch)
-           
-           
-           
+        followerNum.addClass("followerNumb")
+        
 
+        // Appending all elements to the page 
+        var restSearch = $("<div>").append(profileImgWrap, followerWrap, profileGroup, viewProfile);
+        
+
+        restSearch.addClass("row align-items-center resultRow")
+        $("#additionalOptions").append(restSearch)
+        $("#additionalOptions").append(hrEl);
     }
-    $("#topThree").hide().fadeIn(200);
-    $("additionalOptions").fadeIn(10000);
-   
+    $("#0").hide().fadeIn(400);
+    $("#1").hide().fadeIn(800);
+    $("#2").hide().fadeIn(1200);
+    
 
-  })
+})
+
 
 
 
