@@ -62,12 +62,7 @@ h1{
     transition: all 0.3s ease 0s;
   
 }
-    /*background-color: #999999;
-    color:#ffffff ;*/
-/*color: #494949 !important;
-border-radius: 50px;
-border-color: #494949 !important;
-transition: all 0.3s ease 0s;*/
+
 .button{
 
     color: #000000 !important;
@@ -79,15 +74,13 @@ transition: all 0.3s ease 0s;*/
     padding-left: 20px;
     padding-right: 20px;
     /*padding: 20px;*/
-    border: 2px solid #f5ded3!important;
+    border: 1px solid #f5ded3!important;
     border-radius: 6px;
     display: inline-block;
     transition: all 0.3s ease 0s;
-    /*border: 1px solid #000000;
-
 }
 
-.button.active{
+.button:active{
     border: 1px solid #000000;
 
     padding-top: 15px;
@@ -220,10 +213,11 @@ button:focus,.btn:active {
   /* Tablet Breakpoint */
 
 
-}
+
 .footer{
-    background-color: #f5ded3;
-    padding-top:200px;
+    background-color: rgb(245, 222, 211, 0.6);
+    backdrop-filter: 8px;
+    padding-top:30px;
 }
 
 

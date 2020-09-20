@@ -342,11 +342,12 @@ console.log(beauty.data[9].result.name)
 $(".latinVerbiage").hide().fadeIn(1000)
 // get industy data when click
 $(".ui").on("click", function(event) {
-
+    console.log($(this).text())
     event.preventDefault();
     $("#topThree").text("")
     
     // get result data
+    console.log(beauty)
     // loop over top three and assign css style
     for (var i = 0; i < 3; i++){
     //  append profile info
