@@ -339,7 +339,9 @@ console.log(beauty.data[6].result.name)
 console.log(beauty.data[7].result.name)
 console.log(beauty.data[8].result.name)
 console.log(beauty.data[9].result.name)
-$(".latinVerbiage").hide().fadeIn(1000)
+$(".latinVerbiage").hide().fadeIn(800)
+$(".classTwo").hide().fadeIn(1200)
+$(".classFour").hide().fadeIn(1800)
 // get industy data when click
 $(".ui").on("click", function(event) {
     console.log($(this).text())
