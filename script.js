@@ -340,8 +340,8 @@ console.log(beauty.data[7].result.name)
 console.log(beauty.data[8].result.name)
 console.log(beauty.data[9].result.name)
 $(".latinVerbiage").hide().fadeIn(800)
-$(".classTwo").hide().fadeIn(1200)
-$(".classFour").hide().fadeIn(1800)
+$(".classTwo").hide().fadeIn(1600)
+$(".classFour").hide().fadeIn(2000)
 // get industy data when click
 $(".ui").on("click", function(event) {
     console.log($(this).text())
@@ -356,22 +356,31 @@ $(".ui").on("click", function(event) {
     var img = beauty.data[i].result.profile_image_url
     var normalImg = img.replace("normal", "400x400")
     var profileImage=$("<img>").attr("src", normalImg )
-    var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001) + "M")
+    var followerNum = $("<div>").text(parseInt(beauty.data[i].result.followers_count*0.00001))
+    var followerText = $("<div>").text("Follwers")
     var profileName =$("<div>").text(beauty.data[i].result.name)
     var profileDescription =$("<div>").text(beauty.data[i].result.description)
-    var link = $("<a>").attr("href", "https://twitter.com/" + beauty.data[i].result.screen_name )
-    var profileLink = $("<button>").append(link)
+    var link = $("<a>").attr("href","https://twitter.com/" + beauty.data[i].result.screen_name)
+    var profileLink = $("<div>").text("View Profile")
+    // profileName.attr("value", beauty.data[3].result.id )
+    followerNum.attr("value", parseInt(beauty.data[i].result.followers_count*0.00001))
+    followerText.addClass("top-three-followers")
     profileLink.addClass("button top-three-button")
-    profileLink.text("View Profile")
+    link.append(profileLink)
+    link.attr("target","_blank")
+    // var recentPost = $("<btn>").text("Recent Tweet")
+    // recentPost.addClass("button top-three-button")
     
+
+   
     profileImage.addClass("top-three-img")
     followerNum.attr("id", "top-num")
     followerNum.addClass("top-three-num")
     profileName.css("text-align", "center")
     profileDescription.addClass("top-three-body")
-    var topThreeEl = $("<div>").append(profileImage, followerNum, profileName, profileDescription, profileLink);
+    var topThreeEl = $("<div>").append(profileImage, followerNum, followerText, profileName, profileDescription, link);
     topThreeEl.attr("id", i)
-    topThreeEl.addClass("col-12 col-md-3 col-lg-3 top-three-card")
+    topThreeEl.addClass("col-11 col-xs-11 col-sm-11 col-md-3 col-lg-3 top-three-card")
     $("#topThree").append(topThreeEl)
 
     }
@@ -402,9 +411,10 @@ $(".ui").on("click", function(event) {
         // Creating title and description
         var profileName =$("<p>").text(beauty.data[i].result.name)
         profileName.addClass("title")
-        var profileDescription =$("<p>").text(beauty.data[i].result.description)
+        var profileDescription =$("<div>").text(beauty.data[i].result.description)
         var profileGroup = $("<div>").append(profileName,profileDescription)
         profileGroup.addClass("col-12 col-sm-6 profileName")
+        profileDescription.addClass("profile-body")
 
         // Creating link to Twitter 
         var viewProfile = $("<div>").addClass("col-12 col-sm-auto")
@@ -436,8 +446,16 @@ $(".ui").on("click", function(event) {
     $("#0").hide().fadeIn(400);
     $("#1").hide().fadeIn(800);
     $("#2").hide().fadeIn(1200);
-    
-
+   $('.top-three-num').each(function () {
+        var $this = $(this);
+        jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+          duration: 2000,
+          easing: 'swing',
+          step: function () {
+            $this.text(Math.ceil(this.Counter)+"M");
+          }
+        });
+      });
 })
 
 
