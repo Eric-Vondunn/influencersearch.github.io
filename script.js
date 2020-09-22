@@ -360,25 +360,24 @@ $(".ui").on("click", function(event) {
     var followerText = $("<div>").text("Follwers")
     var profileName =$("<div>").text(beauty.data[i].result.name)
     var profileDescription =$("<div>").text(beauty.data[i].result.description)
+    var viewRecentNews =$("<div>").text("recentNews")
     var link = $("<a>").attr("href","https://twitter.com/" + beauty.data[i].result.screen_name)
-    var profileLink = $("<div>").text("View Profile")
-    // profileName.attr("value", beauty.data[3].result.id )
+    var profileLink = $("<div>").text("Hire Now")
     followerNum.attr("value", parseInt(beauty.data[i].result.followers_count*0.00001))
     followerText.addClass("top-three-followers")
     profileLink.addClass("button top-three-button")
     link.append(profileLink)
     link.attr("target","_blank")
-    // var recentPost = $("<btn>").text("Recent Tweet")
-    // recentPost.addClass("button top-three-button")
     
-
+    viewRecentNews.addClass("button top-three-button")
+    viewRecentNews.attr("id", "recent-news")
    
     profileImage.addClass("top-three-img")
     followerNum.attr("id", "top-num")
     followerNum.addClass("top-three-num")
     profileName.css("text-align", "center")
     profileDescription.addClass("top-three-body")
-    var topThreeEl = $("<div>").append(profileImage, followerNum, followerText, profileName, profileDescription, link);
+    var topThreeEl = $("<div>").append(profileImage, followerNum, followerText, profileName, profileDescription, link, viewRecentNews);
     topThreeEl.attr("id", i)
     topThreeEl.addClass("col-11 col-xs-11 col-sm-11 col-md-3 col-lg-3 top-three-card")
     $("#topThree").append(topThreeEl)
@@ -422,7 +421,7 @@ $(".ui").on("click", function(event) {
         var arrow = $("<img>").attr("src", "https://github.com/pankuanting102/week-2-homework-responsive-portfolio/blob/master/Assets/arrow@2x.png?raw=true")
         arrow.addClass("arrow")
         link.attr("target","_blank")
-        link.text("View Profile")
+        link.text("Hire Now")
         viewProfile.append(link, arrow); 
        
 
@@ -456,16 +455,18 @@ $(".ui").on("click", function(event) {
           }
         });
       });
+
+      
 })
 
 
 
 
-
-
-
-
-
-
-
-
+var search = "bitcoin"
+var queryURL ="http://newsapi.org/v2/everything?q=" + search + "&from=2020-08-21&sortBy=publishedAt&apiKey=b8119873418145159f70b8c8143ec7ef"; 
+$.ajax({
+    url: queryURL,
+    method: 'get'
+    }).then(function(response) {
+console.log(response)
+    });
