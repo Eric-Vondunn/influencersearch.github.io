@@ -157,9 +157,9 @@ $(".classFour").hide().fadeIn(2000)
     $("#latest-news-divider").append(newsDivider)
     $("#latest-news-divider").addClass("latest-divider")
    $("#recent-news").html("")
-    var newsURL ="http://newsapi.org/v2/everything?q=" + search + "&from=2020-09-21&sortBy=publishedAt&apiKey=b8119873418145159f70b8c8143ec7ef"; 
+   var newsURL ="http://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=" + search + "&from=2020-09-20&sortBy=publishedAt&apiKey=0a351709175c440495f1faf157232979"; 
           $.ajax({
-              url: newsURL,
+              url: newsURL, 
               method: 'get'
               }).then(function(response) {
                 
