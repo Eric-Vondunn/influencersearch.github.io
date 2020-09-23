@@ -71,6 +71,7 @@ h1{
 .top-three-body{
     font-family: 'Mada', sans-serif;
     font-weight: 300;
+    font-size: 18px;
     text-align: center;
     width: 200px;
     margin: auto;
@@ -232,7 +233,7 @@ button:focus,.btn:active {
   .classFour{
       margin: auto;
       width: 90vw;
-      margin-bottom: 200px;
+      margin-bottom: 80px;
   }
   
   .arrow{
@@ -268,7 +269,42 @@ button:focus,.btn:active {
     font-size: 18px;
 }
 
+.recent-news-card{
+    border-radius: 30px;
+    background-color: #ffffff;
+    margin-top: 80px;
+    box-shadow: 0 4px 8px 0 rgba(228, 228, 228, 0.1), 0 6px 20px 0 rgba(146, 146, 146, 0.19);
+    padding: 0px !important;
+    margin: 1.2vw;
+   
+}
 
+.recent-news-img{
+    width: 100%;
+    height: auto;
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+    position: relative;
+}
+
+#recent-news{
+width: 100%;
+margin: auto;
+margin-bottom: 200px;
+
+}
+
+
+
+
+
+.latest-divider{
+    font-family: 'Mada', sans-serif;
+    font-size: 28px;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    text-align: center;
+}
 /* Responsive Pass */
 
   /* // XS (portrait phones, less than 576px) */
