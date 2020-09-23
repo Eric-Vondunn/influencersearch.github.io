@@ -12,7 +12,7 @@ var settings = {
 "method": "POST",
 "headers": {
 "x-rapidapi-host": "influencer-search.p.rapidapi.com",
-"x-rapidapi-key": "34f3570d92msh978574168a75d95p11fe8cjsn8129c9cefda7",
+"x-rapidapi-key": "a0b4de0f6dmsh290e3401b259012p1ce0acjsn01ea65896899",
 "content-type": "application/json",
 "accept": "application/json"
 },
