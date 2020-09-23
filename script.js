@@ -157,7 +157,7 @@ $(".classFour").hide().fadeIn(2000)
     $("#latest-news-divider").append(newsDivider)
     $("#latest-news-divider").addClass("latest-divider")
    $("#recent-news").html("")
-    var newsURL ="http://newsapi.org/v2/everything?q=" + search + "&from=2020-09-21&sortBy=publishedAt&apiKey=b8119873418145159f70b8c8143ec7ef"; 
+    var newsURL ="http://newsapi.org/v2/everything?q=" + search + "&from=2020-09-21&sortBy=publishedAt&apiKey=b06592e278f04bf0953f7cfaf6ef504c"; 
           $.ajax({
               url: newsURL,
               method: 'get'
